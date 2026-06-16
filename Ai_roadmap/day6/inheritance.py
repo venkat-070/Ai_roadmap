@@ -9,7 +9,7 @@ class SavingsAccount(BankAccount):
         super().__init__(owner,balance)
         self.interest_rate = interest_rate
     def add_interest(self):
-        self.balance += self.balance*(self.interest_rate*0.01)
+        self.balance += self.balance*(self.interest_rate * 0.01)
         self.show_balance()
 acc1 = SavingsAccount("ravi",5000)
 acc1.show_balance()
