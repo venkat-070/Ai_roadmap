@@ -16,6 +16,8 @@ class BankAccount:
         else:
             print("\nInsufficient funds..\n")
         self.check_balance()
+    def __str__(self):
+        return "Account owner: "+self.owner+" | balance: "+str(self.balance)
 name = input("Enter your name: ")
 acc = BankAccount(name)
 while True:
@@ -34,4 +36,5 @@ while True:
         break
     else:
         print("Invalid input")
+print(acc)
         
