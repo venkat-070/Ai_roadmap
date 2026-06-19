@@ -8,25 +8,25 @@ A structured 4-week Python learning journey focused on building real-world CLI a
 A command-line contact book built with Python.
 - Features: Add, View, Search, and Delete contacts
 - Concepts used: Functions, *args, **kwargs, loops, dictionaries, list comprehensions
-- [View Code](Ai_roadmap/week1_project/contact_book.py)
+- [View Code](Ai_roadmap/day04_week1_project/contact_book.py)
 
 ### Week 2 — Bank Account OOP App
 A command-line bank account manager built using Object-Oriented Programming.
 - Features: Deposit, Withdraw, Check Balance, Overdraft protection
 - Concepts used: Classes, objects, __init__, instance methods, inheritance, super()
-- [View Code](Ai_roadmap/week2_project/bank_account.py)
+- [View Code](Ai_roadmap/day07_week2_project/bank_account.py)
 
 ### Week 3 — Notes Saver App
 A command-line notes manager that saves data permanently to a JSON file.
 - Features: Add, View, Delete notes — data persists after closing the program
 - Concepts used: File handling, JSON read/write, error handling (try/except)
-- [View Code](Ai_roadmap/week3_project/notes_saver.py)
+- [View Code](Ai_roadmap/day09_week3_project/notes_saver.py)
 
 ### Week 4 — Weather Fetcher App
 A command-line weather app that fetches real-time weather data from a public API.
 - Features: Enter any city name, displays temperature, humidity, wind speed, description
 - Concepts used: requests library, REST APIs, JSON parsing, error handling
-- [View Code](Ai_roadmap/week4_project/weather_fetcher.py)
+- [View Code](Ai_roadmap/day11_week4_project/weather_fetcher.py)
 
 ## Concepts Covered
 
