@@ -14,7 +14,7 @@ A command-line contact book built with Python.
 A command-line bank account manager built using Object-Oriented Programming.
 - Features: Deposit, Withdraw, Check Balance, Overdraft protection
 - Concepts used: Classes, objects, __init__, instance methods, inheritance, super()
-- [View Code](Ai_roadmap/day07_week2_project/Bank_Account.py)
+- [View Code](Ai_roadmap/day07_week2_project/BankAccount_app.py)
 
 ### Week 3 — Notes Saver App
 A command-line notes manager that saves data permanently to a JSON file.
