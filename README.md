@@ -76,3 +76,16 @@ This is different from a calculator. `2+2` always has one correct, deterministic
 This randomness is controlled by a setting called **temperature** (and another called **top-p**) — covered in Day 2.
 
 Resource used: Andrej Karpathy's "Intro to Large Language Models" (YouTube, watched 0–40 min mark).
+
+## Day 2 - Tokens, temperature , context window 
+**TOKENS**:
+Tokens are nothing but words in terms of LLM's. but not every word is token - sometimes a word is split into multiple tokens
+example: unbelivable - "Un" + "beliv" +"able" are 3 tokens 
+
+**Temperature:** 
+Temperature controls the selection on words with the help of prediction 
+low temp - accurate , safe answers , highest probability words are picked
+High temp - this is used when there is a need of creative writting or narrating a story
+
+**context window:**
+This is the maximum amount of information the llm can take as input or generate as an output 
