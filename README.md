@@ -60,3 +60,19 @@ A command-line weather app that fetches real-time weather data from a public API
 - response.status_code and response.json()
 - Parsing nested JSON responses
 - Error handling for network requests
+
+# Week 5 - LLM Concepts
+
+## Day 1 - What is an LLM?
+
+An LLM (Large Language Model) generates text by predicting the next word, one token at a time, based on patterns learned from massive amounts of training text (books, articles, code, websites).
+
+Before this, I assumed AI models worked like a lookup system — fetching a pre-written response from some backend database. That's wrong. The model isn't retrieving an answer; it's generating one word at a time, fresh, based on probability.
+
+At each step, the model doesn't just pick the single "best" next word. It calculates a probability for every possible next word (e.g. "the" → 40%, "a" → 25%, "an" → 10%, etc.) and can sample from this distribution rather than always picking the top choice. This is why the same prompt can give different answers each time.
+
+This is different from a calculator. `2+2` always has one correct, deterministic answer — no randomness involved. LLMs are not deterministic by default because of this probability-based sampling.
+
+This randomness is controlled by a setting called **temperature** (and another called **top-p**) — covered in Day 2.
+
+Resource used: Andrej Karpathy's "Intro to Large Language Models" (YouTube, watched 0–40 min mark).
