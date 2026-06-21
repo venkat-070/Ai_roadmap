@@ -89,3 +89,30 @@ High temp - this is used when there is a need of creative writting or narrating 
 
 **context window:**
 This is the maximum amount of information the llm can take as input or generate as an output 
+######
+## Day 3 - API Keys, Requests, and Responses
+
+**API Key:**
+An API key is like a password for my program, not for me personally. It tells Google who is making the request and tracks usage. It must never be hardcoded or pushed to GitHub — if leaked, someone else could use it and I could get billed for their usage, or my key could get suspended. I'll store it in a .env file (excluded by .gitignore) and load it with python-dotenv, same as planned in Month 1.
+
+**Request structure:**
+Calling the Gemini API is similar to the Weather Fetcher app from Month 1, but uses POST instead of GET (since I'm sending data, not just asking for it). A simplified request looks like:
+{
+
+"contents": [{"parts": [{"text": "my prompt here"}]}],
+
+"generationConfig": {"temperature": 0.7}
+
+}
+- "contents" = my actual prompt
+- "generationConfig" = settings like temperature
+**Response structure:**
+The response comes back as JSON, and I need to dig into nested keys to extract the actual text - same skill as extracting weather data in Month 1.
+{
+"candidates": [{"content": {"parts": [{"text": "the actual answer"}]}}]
+}
+To extract the text in Python:
+```python
+response_data["candidates"][0]["content"]["parts"][0]["text"]
+```
+This is the same overall workflow as Weather Fetcher: build request → send it → get JSON back → extract the field I need → display it. The new pieces this week: API key for authentication, and POST instead of GET.
