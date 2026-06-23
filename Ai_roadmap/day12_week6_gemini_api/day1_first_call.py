@@ -1,11 +1,6 @@
 import os
 from dotenv import load_dotenv
 from google import genai
-import ssl
-import certifi
-
-# Fix SSL certificates
-os.environ["SSL_CERT_FILE"] = certifi.where()
 
 # Load API key from .env file
 load_dotenv()
@@ -22,3 +17,9 @@ response = client.models.generate_content(
 
 # Extract and print the text
 print(response.text)
+
+# After print(response.text), add:
+print("\n--- Usage Stats ---")
+print("Input tokens used:", response.usage_metadata.prompt_token_count)
+print("Output tokens used:", response.usage_metadata.candidates_token_count)
+print("Total tokens:", response.usage_metadata.total_token_count)
