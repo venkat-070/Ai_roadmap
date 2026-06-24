@@ -1,4 +1,5 @@
 import os 
+import time
 from google import genai
 from dotenv import load_dotenv
 from google.genai import types
@@ -8,17 +9,20 @@ api_key = os.getenv("GEMINI_API_KEY")
 
 client = genai.Client(api_key = api_key)
 
-response1 = client.models.generate_content(
-model = "gemini-2.5-flash",
-contents = "Give me a creative name for a coffee shop. Just the name, nothing else.",
-config = types.GenerateContentConfig(temperature = 0.0)
-)
-
-response2 = client.models.generate_content(
-model = "gemini-2.5-flash",
-contents = "Give me a creative name for a coffee shop. Just the name, nothing else.",
-config = types.GenerateContentConfig(temperature = 2.0)
-)
+for i in range(3):
+    print("Run: "+str(i+1))
+    response1 = client.models.generate_content(
+    model = "gemini-2.5-flash",
+    contents = "Give me a creative name for a coffee shop. Just the name, nothing else.",
+    config = types.GenerateContentConfig(temperature = 0.0)
+    )
+    time.sleep(30)
+    response2 = client.models.generate_content(
+    model = "gemini-2.5-flash",
+    contents = "Give me a creative name for a coffee shop. Just the name, nothing else.",
+    config = types.GenerateContentConfig(temperature = 2.0)
+    )
+    time.sleep(30)
 print(response1.text)
 print(response2.text)
 
