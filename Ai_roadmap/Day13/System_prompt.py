@@ -8,7 +8,7 @@ api_key = os.getenv("GEMINI_API_KEY")
 
 client = genai.Client(api_key = api_key)
 response = client.models.generate_content(
-    model = "gemini-2.5-flash",
+    model = "gemini-2.0-flash",
     contents = "Tell me about dogs.",
     config = types.GenerateContentConfig(
         system_instruction = "You are a veterinary doctor. Always respond in exactly 3 bullet points. Be professional and concise.",
