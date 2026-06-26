@@ -60,7 +60,7 @@ A command-line weather app that fetches real-time weather data from a public API
 - response.status_code and response.json()
 - Parsing nested JSON responses
 - Error handling for network requests
-
+ 
 # Week 5 - LLM Concepts
 
 ## Day 1 - What is an LLM?
