@@ -116,3 +116,73 @@ To extract the text in Python:
 response_data["candidates"][0]["content"]["parts"][0]["text"]
 ```
 This is the same overall workflow as Weather Fetcher: build request → send it → get JSON back → extract the field I need → display it. The new pieces this week: API key for authentication, and POST instead of GET.
+
+# Week 6 - Gemini API Basics
+
+## What I learned
+- How to initiate api call from python script
+- The use of system prompt
+- 
+
+## Scripts
+- `day1_first_call.py` - This code makes a api call to gemini model and returns the output.
+- `day2_system_prompt.py` - The system prompt are the instructions given to the model on how output is to be generated.
+
+## Tech Stack
+- Python
+- Google Gemini API
+- python-dotenv
+
+## How to run
+1. Clone this repo
+2. `pip install google-generativeai python-dotenv`
+3. Add `GEMINI_API_KEY=your_key` to `.env`
+4. Run any script: `python day1_first_call.py`
+
+
+# Week 7 - Prompt Engineering
+
+## What I learned
+- The difference in prompts given to model using two methods zero-shot and few-shot
+- How to tell a model to output the answer in json strurture.
+- The chain of thought is a process of making the model produce an output in step by step process.
+
+## Scripts
+- `day1_zeroshot_vs_fewshot.py` - The model returns an output with nrml prompt and a prompt with examples on how to generate output.
+- `day2_json_output.py` - giving a struture to the model to return in the same format
+- `day3_chain_of_thought.py` - Making the model think in step by step process which increases model performance.
+- `day4_prompt_comparison.py` - The comparision between zero-shot , few-shot , chain of thought.
+
+## Key concepts covered
+- Zero shot vs few shot 
+- Json strurcture output 
+- chain of thought
+
+## Tech Stack
+- Python
+- Groq API (LLaMA 3.3 70B)
+- python-dotenv
+
+# Week 8 - streamlit app
+
+## What it does
+** It is an assistant helps us in our tasks. additionally replies in the tone we need. **
+
+## Features
+- An option to enter prompt aliased as topic in the app , which helps user to ask his thoughts.
+- **Tone** : The tone selection feature which states the assistant , in which tone the response should be addressed.
+
+## Tech Stack
+- Python
+- Streamlit
+- Groq API (LLaMA 3.3 70B)
+- python-dotenv
+
+## Live Demo
+Url: [https://appapp-stsybjawozpdstmwrwypv3.streamlit.app/]
+
+## How to run locally
+1. Clone this repo
+2. Install dependencies: `pip install -r requirements.txt`
+3. Add your Groq API key to a `.env` file: `GROQ="your_key_here"`
+4. Run: `streamlit run app.py`
