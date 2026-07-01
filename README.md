@@ -8,7 +8,7 @@ A structured 4-week Python learning journey focused on building real-world CLI a
 A command-line contact book built with Python.
 - Features: Add, View, Search, and Delete contacts
 - Concepts used: Functions, *args, **kwargs, loops, dictionaries, list comprehensions
-- [View Code](Ai_roadmap/day04_week1_project/contact_book.py)
+- [View Code](Ai_roadmap/day04_week1_project/contact_book.py) 
 
 ### Week 2 — Bank Account OOP App
 A command-line bank account manager built using Object-Oriented Programming.
