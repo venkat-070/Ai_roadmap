@@ -39,7 +39,8 @@ small_collection = client.get_or_create_collection(name="small_chunks")
 
 small_collection.add(
     documents=small_chunks,
-    ids = [f"chunks {i}" for i in range(len(small_chunks))]
+    ids = [f"chunks {i}" for i in range(len(small_chunks))],
+    
 )
 
 results = small_collection.query(
