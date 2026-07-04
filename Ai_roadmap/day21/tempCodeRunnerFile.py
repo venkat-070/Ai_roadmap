@@ -29,6 +29,6 @@ llm = ChatGroq(
     api_key=api_key,
     temperature=0.2
 )
-prompt , page_no = ask_question("what does james clearly say about excercise routines?")
+prompt , page_no = ask_question("What is an habit?")
 results = llm.invoke(prompt)
 print(results.content,f"page no's: {page_no}",sep="\n")
