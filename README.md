@@ -2,7 +2,7 @@
 
 A structured 4-week Python learning journey focused on building real-world CLI applications from scratch.
 
-## Projects Built
+## Projects Built 
 
 ### Week 1 — Contact Book CLI
 A command-line contact book built with Python.
