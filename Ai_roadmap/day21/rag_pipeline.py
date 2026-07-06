@@ -14,8 +14,9 @@ def ask_question(question):
     )
     prompt = "Use the following context to answer the question accurately. If the answer is not in the context, say 'I don't know'.\n\ncontext: "
     doc , metadata = chunks["documents"][0],chunks['metadatas'][0]
-    for i in doc:
-        prompt += i.replace("\t"," ")
+    for i in range(3):
+        print(f"chunk_{i+1}:page_no:{metadata[i]['page_no']}:{doc[i].replace("\t"," ")}\n")
+        prompt += doc[i].replace("\t"," ")
     page_no = ""
     for i in metadata:
         page_no += str(i['page_no'])+","
@@ -29,6 +30,6 @@ llm = ChatGroq(
     api_key=api_key,
     temperature=0.2
 )
-prompt , page_no = ask_question("what does james clearly say about excercise routines?")
+prompt , page_no = ask_question("discipline is the best habit to have?")
 results = llm.invoke(prompt)
 print(results.content,f"page no's: {page_no}",sep="\n")
