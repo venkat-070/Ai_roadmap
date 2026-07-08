@@ -1,9 +1,9 @@
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.document_loaders import PyPDFLoader
 import chromadb
+from dotenv import load_dotenv
 from langchain_groq import ChatGroq
 import os 
-from dotenv import load_dotenv
 
 load_dotenv()
 api_key = os.getenv("GROQ")
@@ -20,7 +20,7 @@ def process_pdf(pdf_path,name):
         collection = client.get_or_create_collection(name=name)
         return collection.count()
     # Load, chunk, embed, store in ChromaDB
-    splitter = RecursiveCharacterTextSplitter(chunk_size=500,chunk_overlap=100)
+    splitter = RecursiveCharacterTextSplitter(chunk_size=2000,chunk_overlap=300)
     loader = PyPDFLoader(pdf_path)
 
     pages = loader.load()
@@ -39,19 +39,29 @@ def process_pdf(pdf_path,name):
 def ask_question(question,collection_name):
     collection = client.get_or_create_collection(collection_name)
     results = collection.query(
-        query_texts= [question],
-        n_results= 3
+        query_texts=[question],
+        n_results=3
     )
-    prompt = "Use the following context to answer the question accurately. If the answer is not in the context, say 'I don't know'.\n\nContext: "
+    prompt = prompt = """Use the following context to answer the question accurately. 
+    Use reasoning and inference when the answer is implied but not explicitly stated.
+    Only say 'I don't know' if there is absolutely no relevant information in the context.
+
+    Context:
+    """
     prompt += "".join(results['documents'][0])
     prompt += f"\nquestion: {question}"
     metadata = results["metadatas"][0]
     page_no = [m['Page_no'] for m in metadata]
 
+    for i, (doc, meta) in enumerate(zip(results['documents'][0], results['metadatas'][0])):
+        print(f"Chunk {i+1} (Page {meta['Page_no']}):")
+        print(doc[:200])
+        print("---")
+
     output = llm.invoke(prompt)
     return output , page_no
 
-print(process_pdf(r"c:\\Users\\Public\\Downloads\\Atomic-Habits-.pdf","Atomic_habits"))
-answer, pages = ask_question("What is a habit?", "Atomic_habits")
+process_pdf(r"C:\\Users\\Public\\Documents\\Required_files\\David_goggins.pdf", "David_goggins")
+answer, pages = ask_question("Who is the author of this book?", "David_goggins")
 print(answer.content)
 print("Pages:", pages)

@@ -3,3 +3,4 @@ __pycache__/
 *.pyc
 .env
 chorma_storage
+repo_clone
