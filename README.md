@@ -186,3 +186,27 @@ Url: [https://appapp-stsybjawozpdstmwrwypv3.streamlit.app/]
 2. Install dependencies: `pip install -r requirements.txt`
 3. Add your Groq API key to a `.env` file: `GROQ="your_key_here"`
 4. Run: `streamlit run app.py`
+
+## Month 3 — RAG Engineering (August 2026)
+
+### Week 9 — Embeddings & Vector Search
+- Learned what embeddings are and how cosine similarity works
+- Hands-on: embedded sentences using sentence-transformers, verified similar meanings score higher
+- Identified silent retrieval failures with own experiments
+
+### Week 10 — ChromaDB & Chunking
+- Set up ChromaDB with persistent storage
+- Experimented with chunk sizes — saw bad chunking break retrieval firsthand
+- Loaded 285-page PDF, split into 1249 chunks with metadata
+
+### Week 11 — LangChain RAG Pipeline
+- Built full RAG pipeline: PDF → chunks → ChromaDB → Groq LLM → answer
+- Stress tested retrieval quality — identified false matches and silent failures
+- Added source citation showing page numbers for every answer
+
+### Week 12 — RAG Document Q&A App
+- Built complete Streamlit app with PDF upload and Q&A interface
+- Deployed on HuggingFace Spaces
+- Live demo: [link here]
+
+**Tech stack:** LangChain, ChromaDB, Groq (llama-3.3-70b), Streamlit, HuggingFace Spaces
