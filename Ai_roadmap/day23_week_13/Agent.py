@@ -34,7 +34,7 @@ agent = create_agent(
     tools=[calculator,get_current_time]
 )
 for chunk in agent.stream(
-    {"messages":[{'role':'user','content':"what time is it right now? , What is the capital of france"}]},
+    {"messages":[{'role':'user','content':"get the current time and i need u to perform multiplication between hour and minute, and then add the seconds to it"}]},
     stream_mode= "values"
 ):
     print(chunk)
