@@ -11,7 +11,7 @@ def current_date_time()->str:
     """It doesnt take any input , but it returns the current date and time."""
     return datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
-gemini_llm = LLM(model="gemini/gemini-3.5-flash",
+gemini_llm = LLM(model="gemini/gemini-flash-lite-latest",
                  api_key=os.getenv("GEMINI_API_KEY"))
 
 search_tool = SerperDevTool()
