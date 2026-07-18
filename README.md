@@ -6,7 +6,7 @@ A structured 4-week Python learning journey focused on building real-world CLI a
    
 ### Week 1 — Contact Book CLI
 A command-line contact book built with Python.
-- Features: Add, View, Search, and Delete contacts
+- Features: Add, View, Search, and Delete contacts 
 - Concepts used: Functions, *args, **kwargs, loops, dictionaries, list comprehensions
 - [View Code](Ai_roadmap/day04_week1_project/contact_book.py) 
 
